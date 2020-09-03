@@ -142,7 +142,7 @@ class quest(QtWidgets.QMainWindow):
             questData = json.load(read_file)
 
         try:
-            questData[str(self.questNum)] = self.qst.questionAnswer.text()
+            questData["answers"][str(self.questNum)] = self.qst.questionAnswer.text()
             questData["questCount"] = self.questNum
             self.qst.question.setText(QuestList[self.questNum])
 

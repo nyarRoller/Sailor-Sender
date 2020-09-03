@@ -85,7 +85,7 @@ class Ui_QST(object):
         self.widget.setGeometry(QtCore.QRect(0, 0, 971, 771))
         self.widget.setObjectName("widget")
         self.widget.raise_()
-        self.widget.setStyleSheet("background-image: url(Login_v5/images/bg-01.jpg);")
+        self.widget.setStyleSheet("background-image: url(bg-01.jpg);")
         self.areaQuestion.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.log = QtWidgets.QWidget(MainWindow)
