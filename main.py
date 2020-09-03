@@ -83,7 +83,7 @@ class selectMode(QtWidgets.QMainWindow):
 class quest(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         
-        self.questNum = 1
+        self.questNum = 0
         QtWidgets.QWidget.__init__(self, parent)
 
         self.qst = Ui_QST()
@@ -142,14 +142,16 @@ class quest(QtWidgets.QMainWindow):
             questData = json.load(read_file)
 
         try:
-            questData["answers"][str(self.questNum)] = self.qst.questionAnswer.text()
+            questData["answers"][str(self.questNum + 1)] = self.qst.questionAnswer.text()
             questData["questCount"] = self.questNum
+            self.qst.questionAnswer.setText("")
+            self.questNum += 1
             self.qst.question.setText(QuestList[self.questNum])
-
+            
             with open("quest.json", "w") as write_file:
                 json.dump(questData, write_file, indent = 4)
 
-            self.questNum += 1
+            
             self.step += self.procent
             self.progressBar.setValue(self.step)           
 
