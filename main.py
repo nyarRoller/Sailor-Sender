@@ -13,7 +13,6 @@ from GUI import *
 from database import *
 
 import codecs
-
 from back import *
 
 from enum import Enum, auto
@@ -139,19 +138,21 @@ class quest(QtWidgets.QMainWindow):
         
   
     def next(self):
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file)
+        with open("quest.json", "r") as read_file:
+            questData = json.load(read_file)
 
         try:
-            data["answers"]["questCount"].append(self.questionAnswer.text())
-            
-            self.qst.question.setText(QuestList[data.questNum])
+            questData[str(self.questNum)] = self.qst.questionAnswer.text()
+            questData["questCount"] = self.questNum
+            self.qst.question.setText(QuestList[self.questNum])
+
+            with open("quest.json", "w") as write_file:
+                json.dump(questData, write_file, indent = 4)
 
             self.questNum += 1
-
             self.step += self.procent
             self.progressBar.setValue(self.step)           
-            
+
         except IndexError:
             self.qst.question.setText("Вопросы кончились")
         
@@ -240,26 +241,37 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         step = 0 #Начальное значение
         try:
             for adress in BaseObl: #Функция отправки сообщений
-                ent.send(
-                to= adress,
-                subject=subj,
-                contents=body, 
-                attachments=file,
-                )
-                step += procent
-                self.progressBar.setValue(step)
+                try:
+                    ent.send(
+                    to= adress,
+                    subject=subj,
+                    contents=body, 
+                    attachments=file,
+                    )
+                    step += procent
+                    self.progressBar.setValue(step)
 
-                print(adress)
+                    print("Отпрвлен на" + adress)
+                except yagmail.error.YagInvalidEmailAddress:
+                    print("пропущен " + adress)
+                    continue
+                    
         except TypeError: #Исключение, если пропушена апликашка
             for adress in BaseObl:
-                ent.send(
-                to= adress,
-                subject=subj,
-                contents=body, 
-                )      
-                step += procent
-                self.progressBar.setValue(step)
-                print(adress)     
+                try:
+                    ent.send(
+                    to= adress,
+                    subject=subj,
+                    contents=body, 
+                    )      
+                    step += procent
+                    self.progressBar.setValue(step)
+                    print("Отпрвлен на " + adress)     
+                    
+                except yagmail.error.YagInvalidEmailAddress:
+                    print("пропущен " + adress)
+                    continue
+                    
 
         self.close()
         BackForm = BkTo(self) #Переход к конечной вкладке
@@ -276,6 +288,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         self.so.setupUi(self)
         self.setWindowIcon(QIcon('icon.png'))
 #Иницилизация всех кнопок
+        self.so.frame.setStyleSheet("background-image: url(bg-01.jpg);")
         self.so.Vintis.clicked.connect(self.vinits)
         self.so.Volinsk.clicked.connect(self.volin)
         self.so.Dnipropentrovsk.clicked.connect(self.dnipro)
@@ -302,10 +315,17 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         self.so.Ukraine.clicked.connect(self.fullUkraine)
         self.so.Ternopilska.clicked.connect(self.ternopilska)
         self.so.Hersonska.clicked.connect(self.hersonska)
-
-
+        self.so.Odeska.clicked.connect(self.odessa)
 
 #Работа кнопок
+    def odessa(self):
+        global BaseObl
+
+        BaseObl = OdeskaObl
+        self.close()
+        dial = selectMode(self)
+        dial.show()
+        
     def vinits(self): #Виницкая область
         global BaseObl
         BaseObl = VinnitObl
@@ -537,7 +557,9 @@ class MyWin(QtWidgets.QMainWindow):
         errorLogin = False
         print("Вход в учётную запись")
         global ent
-        entering(self.ui.Email.text(), self.ui.Pasword.text()) #Проверка на правильлность логина и пароля
+        # yag = yagmail.SMTP(self.ui.Email.text(), self.ui.Pasword.text())
+        # yag.login()
+
 
         with open("data.json", "r") as read_file:
             data = json.load(read_file)
@@ -551,51 +573,36 @@ class MyWin(QtWidgets.QMainWindow):
 
         ent = entering(self.ui.Email.text(), self.ui.Pasword.text()) #Запоминание данных для входа
 
-        if not errorLogin:
-            if not errorLoginYagInvalid: #Проверка
-                with open("data.json", "r") as read_file:
-                    data = json.load(read_file) 
-
-                data['enterInAccount'] = True       
-                            
-                with open("data.json", "w") as write_file:
-                    json.dump(data, write_file, indent = 4)
-                self.dial = SelectObj(self)
-                self.close()
-                self.dial.show()
-
-            # self.dial = SelectObj(self) #Переход на выбор области
-            # self.close()
-            # self.dial.show()
-            
-
-            # return ent
-        elif errorLogin:
-            self.ui.status.setText("Wrond email or pasword")  #Вывод ошибки
+        if entering(self.ui.Email.text(), self.ui.Pasword.text()): #Проверка на правильлность логина и пароля
+            with open("data.json", "r") as read_file:
+                data = json.load(read_file) 
+            data['enterInAccount'] = True       
         
-        elif errorLoginYagInvalid:
-            self.ui.status.setText("Invalid email")
+            with open("data.json", "w") as write_file:
+                json.dump(data, write_file, indent = 4)
+            self.dial = SelectObj(self)
+            self.close()
+            self.dial.show()
+
+        else:
+            self.ui.status.setText("Wrond email or pasword")  #Вывод ошибки
+
 
 
 #Вход в учётную запись
 def entering(email,pasword):
     yag = yagmail.SMTP(email,pasword)
-    global errorLogin
-    global errorLoginYagInvalid
 
     try: #Попытка  входа
-        errorLogin = False 
-        errorLoginYagInvalid = False
-
         yag.login()
 
     except yagmail.error.YagInvalidEmailAddress: #Исключение на случай неверного формата адреса
             print("Invalid email")
-            errorLoginYagInvalid = True
+            return False
 
     except smtplib.SMTPAuthenticationError: #Исключение на случай ошибки авторизации от смтп
             print("Wrong email or pasword")
-            errorLogin = True
+            return False
     return yag
 
 
