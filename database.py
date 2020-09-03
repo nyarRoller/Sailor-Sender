@@ -76,7 +76,7 @@ KirovogradObl = ["nikita.yaremenko11@gmail.com"] #Кіровоградська �
 LuganskaObl = ["nikita.yaremenko11@gmail.com"] #Луганська Область
 LvivskaObl = ["nikita.yaremenko11@gmail.com"] #Львівська Область
 MikolaevObl = ["nikita.yaremenko11@gmail.com"] #Миколаївська Область
-Kiev = ["nikita.yaremenko11@gmail.com"] #Місто Київ
+Kiev = ["nikita.yaremenko11@gmail.com","nikita"] #Місто Київ
 OdeskaObl = ["nikita.yaremenko11@gmail.com",	#Одеська Область
 	"info@mjsml.com",
 	"office@tcm-crewing.com",
@@ -349,4 +349,26 @@ for adress in ChernivetskaObl:
 
 
 
-QuestList = ["1","2","3"]
+QuestList = ["Name",
+	"Surname",
+	"Date of Birth",
+	"Place of Birth",
+	"Nationality",
+	"Permament address",
+	"Height",
+	"Weight",
+	"Color of eyes",
+	"Color of hair",
+	"Mob.Phone",
+	"E-mail",
+	"Permament address",
+	"Civil Status",
+	"Next of kin",
+	"Adress mext of kin",
+	"Nbr of Children",
+	"Nearvest airport",
+	"Position",
+	"National Pasport Number",
+	"National Pasport Issued",
+	"National Pasport Valid",
+	"National Pasport Country/City",]
