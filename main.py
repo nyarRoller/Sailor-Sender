@@ -164,8 +164,6 @@ class BkTo(QtWidgets.QDialog): #Форма для выхода из програ
         super(BkTo, self).__init__(parent)
         self.bk = Ui_BackTo()
         self.bk.setupUi(self)
-        
-
         self.bk.Back.clicked.connect(self.back) #Кнопка выхода
 
     def back(self):
