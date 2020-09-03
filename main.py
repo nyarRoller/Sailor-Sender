@@ -24,7 +24,7 @@ from SelectObj import *
 from questions import *
 
 from selectMode import *
-
+from docxtpl import DocxTemplate
 import json
 errorLogin = True
 
@@ -157,7 +157,20 @@ class quest(QtWidgets.QMainWindow):
 
         except IndexError:
             self.qst.question.setText("Вопросы кончились")
+            anketa()
         
+
+    def anketa():
+        context = {}
+        with open("quest.json","r") as read_file:
+            questData = json.load(read_file)
+        doc = DocxTemplate("Novikontas application.doc")
+        for key in questData["answers"]:
+            context[key] = questData["answers"][key]
+        
+        doc.render(context)
+        doc.save("newDoc.docx")
+
 
 
 class BkTo(QtWidgets.QDialog): #Форма для выхода из программы
