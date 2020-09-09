@@ -65,21 +65,27 @@ class Ui_BackTo(object):
 "}")
         self.Back.setObjectName("Back")
         self.label = QtWidgets.QLabel(self.widget_2)
-        self.label.setGeometry(QtCore.QRect(20, 30, 401, 71))
+        self.label.setGeometry(QtCore.QRect(20, 30, 430, 90))
         self.label.setStyleSheet("font-family: Poppins-Regular;\n"
 "font-size: 25px;")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.widget_2)
-        self.label_2.setGeometry(QtCore.QRect(30, 170, 421, 91))
+        self.label_2.setGeometry(QtCore.QRect(55, 170, 421, 91))
         self.label_2.setStyleSheet("font-family: Poppins-Regular;\n"
 "font-size: 20px;\n"
 "text-align: center;")
         self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.widget_2)
+        self.label_3.setGeometry(QtCore.QRect(50, 240, 421, 20))
+        self.label_3.setStyleSheet("font-family: Poppins-Regular;\n"
+"font-size: 20px;\n"
+"text-align: center;")
+        self.label_3.setObjectName("label_3")
         self.BgBackTo = QtWidgets.QWidget(self.cs)
         self.BgBackTo.setGeometry(QtCore.QRect(-1, -1, 973, 773))
         self.BgBackTo.setObjectName("BgBackTo")
         self.BgBackTo.raise_()
-        self.BgBackTo.setStyleSheet("background-image: url(Login_v5/images/bg-01.jpg);")
+        self.BgBackTo.setStyleSheet("background-image: url(bg-01.jpg);")
         self.widget_2.raise_()
         self.gridLayout.addWidget(self.cs, 0, 0, 1, 1)
 
@@ -91,5 +97,5 @@ class Ui_BackTo(object):
         BackTo.setWindowTitle(_translate("BackTo", "Sailor Sender"))
         self.Back.setText(_translate("BackTo", "Выйти"))
         self.label.setText(_translate("BackTo", "Рассылка успешно выполнена"))
-        self.label_2.setText(_translate("BackTo", "Чтобы выйти из программы\n"
-"          нажмите на кнопку ниже"))
+        self.label_2.setText(_translate("BackTo", "Чтобы выйти из программы"))
+        self.label_3.setText(_translate("BackTo", "Нажмите на кнопку ниже"))

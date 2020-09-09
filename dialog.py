@@ -130,7 +130,7 @@ class Ui_Dialog(object):
         self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.widget.raise_()
-        self.widget.setStyleSheet("background-image: url(Login_v5/images/bg-01.jpg);")
+        self.widget.setStyleSheet("background-image: url(bg-01.jpg);")
         self.bg.raise_()
         self.log = QtWidgets.QWidget(Dialog)
         self.log.setGeometry(QtCore.QRect(40, 5, 891, 51))

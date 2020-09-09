@@ -180,6 +180,7 @@ class BkTo(QtWidgets.QDialog): #Форма для выхода из програ
         self.bk = Ui_BackTo()
         self.bk.setupUi(self)
         self.bk.Back.clicked.connect(self.back) #Кнопка выхода
+        self.setWindowIcon(QIcon('icon.png'))
 
     def back(self):
         sys.exit()
@@ -632,7 +633,7 @@ if __name__ == "__main__":
         try:
             yag = yagmail.SMTP(data['account']['login'],data['account']['pasword'])
             yag.login()
-            application = SelectObj()
+            application = BkTo()
         except smtplib.SMTPAuthenticationError: #Исключение на случай ошибки авторизации от смтп
             print("Неверный логин или пароль")
             errorLogin = True
