@@ -62,13 +62,14 @@ class selectMode(QtWidgets.QMainWindow):
         data["account"]["login"] = None
         data["account"]["pasword"] = None
         data["enterInAccount"] = False
-        with open("data.json", "w") as write_file:
+        with open("data\data.json", "w") as write_file:
             json.dump(data, write_file, indent = 4)
         
-        self.close()
+        
 
-        win = MyWin(self)
-        win.show()
+        self.win = MyWin(self)
+        self.win.show()
+        self.close()
         
     def ManualModeFunk(self):
         
@@ -551,7 +552,7 @@ class MyWin(QtWidgets.QMainWindow):
         QtWidgets.QWidget.__init__(self, parent)
 
         self.ui = Ui_MainWindow()
-
+        self.nx = None
         self.ui.setupUi(self)
 
         self.ui.Enter.clicked.connect(self.enterOpen) #Иницилизация кнопки
@@ -574,7 +575,7 @@ class MyWin(QtWidgets.QMainWindow):
         data['account']['login'] = base64.b64encode(self.ui.Email.text().encode("UTF-8")).decode("UTF-8")
         data['account']['pasword'] = base64.b64encode(self.ui.Pasword.text().encode("UTF-8")).decode("UTF-8")
 
-        with open("data.json", "w") as write_file:
+        with open("data\data.json", "w") as write_file:
             json.dump(data, write_file, indent = 4)
 
         ent = entering(self.ui.Email.text(), self.ui.Pasword.text()) #Запоминание данных для входа
@@ -587,9 +588,10 @@ class MyWin(QtWidgets.QMainWindow):
             with open("data\data.json", "w") as write_file:
                 json.dump(data, write_file, indent = 4)
 
-            self.close()
-            self.dial = SelectObj(self)            
+            
+            self.dial = SelectObj(self.nx)            
             self.dial.show()
+            self.close()
 
         else:
             self.ui.status.setText("Wrong email or pasword")  #Вывод ошибки
@@ -646,6 +648,10 @@ if __name__ == "__main__":
             print("Неверный логин или пароль")
             errorLogin = True
             application = MyWin()
+        except AttributeError:
+            print("nonetype")
+            errorLogin = True
+            application = MyWin()            
 
 
             
