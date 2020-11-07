@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SelectObl</class>
+ <widget class="QDialog" name="SelectObl">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>972</width>
+    <height>770</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>972</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>972</width>
+    <height>770</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sailor Sender</string>
+  </property>
+  <widget class="QPushButton" name="Vintis">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>130</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Вінницька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Volinsk">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>170</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Волинська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Dnipropentrovsk">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>210</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Дніпропетровська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Donteska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>250</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Донецька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Zhitomirska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>290</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Житомирська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Zakarpatska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>330</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Закарпатська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Zaporizka">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>370</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Запорізька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Ivanofrankivska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>410</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Івано-Франківська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Kievska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>450</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Київська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Kirovogradska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>490</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Кіровоградська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Luganska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>530</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Луганська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Lvivska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>570</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Львівська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Mikolaevska">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>610</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Миколаївська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Sumska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>370</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Сумська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Hmelnitska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>490</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Хмельницька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Odeska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>210</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Одеська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Ternopilska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>410</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Тернопільська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Hersonska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>450</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Херсонська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Harkivska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>170</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Харківська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Chekaska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>530</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Черкаська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Chernivetksa">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>570</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Чернівецька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Rivnenska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>290</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Рівненська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Chernikibska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>610</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Чернігівська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Poltavska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>250</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Полтавська область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mKiev">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>130</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Місто Київ</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Vinitska">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>330</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Вінницька область</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Ukraine">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>660</y>
+     <width>621</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #333333;
+border-radius: 10px;
+
+font-family: Poppins-Medium;
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+}
+QPushButton::before {
+  content: &quot;&quot;;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+QPushButton:hover:before{
+	opacity: 1;
+}</string>
+   </property>
+   <property name="text">
+    <string>Вся Україна</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>60</y>
+     <width>301</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px</string>
+   </property>
+   <property name="text">
+    <string>Оберіть область:</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>981</width>
+     <height>771</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>Vintis</zorder>
+  <zorder>Volinsk</zorder>
+  <zorder>Dnipropentrovsk</zorder>
+  <zorder>Donteska</zorder>
+  <zorder>Zhitomirska</zorder>
+  <zorder>Zakarpatska</zorder>
+  <zorder>Zaporizka</zorder>
+  <zorder>Ivanofrankivska</zorder>
+  <zorder>Kievska</zorder>
+  <zorder>Kirovogradska</zorder>
+  <zorder>Luganska</zorder>
+  <zorder>Lvivska</zorder>
+  <zorder>Mikolaevska</zorder>
+  <zorder>Sumska</zorder>
+  <zorder>Hmelnitska</zorder>
+  <zorder>Odeska</zorder>
+  <zorder>Ternopilska</zorder>
+  <zorder>Hersonska</zorder>
+  <zorder>Harkivska</zorder>
+  <zorder>Chekaska</zorder>
+  <zorder>Chernivetksa</zorder>
+  <zorder>Rivnenska</zorder>
+  <zorder>Chernikibska</zorder>
+  <zorder>Poltavska</zorder>
+  <zorder>mKiev</zorder>
+  <zorder>Vinitska</zorder>
+  <zorder>Ukraine</zorder>
+  <zorder>label</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

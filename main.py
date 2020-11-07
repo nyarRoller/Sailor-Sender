@@ -1,6 +1,7 @@
 import yagmail
 import sys
 
+import base64
 
 import smtplib
 
@@ -8,22 +9,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from GUI import *
+from win.GUI import *
 
-from database import *
+from data.database import *
 
+import time
 import codecs
-from back import *
+from win.back import *
 
 from enum import Enum, auto
 
-from dialog import *
+from win.dialog import *
 import time
-from SelectObj import *
+from win.SelectObj import *
 
-from questions import *
+from win.questions import *
 
-from selectMode import *
+from win.selectMode import *
 from docxtpl import DocxTemplate
 import json
 errorLogin = True
@@ -41,10 +43,10 @@ class selectMode(QtWidgets.QMainWindow):
         self.SM.ManualMode.clicked.connect(self.ManualModeFunk)
         self.SM.ApGenerator.clicked.connect(self.ApMode)
 
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file) 
+        with open("data\data.json", "r") as f:
+            data = json.load(f) 
 
-        self.SM.email.setText(data["account"]["login"])
+        self.SM.email.setText(base64.b64decode(data['account']['login'].encode("UTF-8")).decode("UTF-8"))
         self.SM.email.adjustSize()
         self.SM.LogOut.clicked.connect(self.logOut)
         self.SM.back.clicked.connect(self.back)
@@ -54,8 +56,8 @@ class selectMode(QtWidgets.QMainWindow):
         win = SelectObj(self)
         win.show()
     def logOut(self):
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file)
+        with open("data\data.json", "r") as f:
+            data = json.load(f) 
         
         data["account"]["login"] = None
         data["account"]["pasword"] = None
@@ -76,10 +78,14 @@ class selectMode(QtWidgets.QMainWindow):
 
 
     def ApMode(self):
-        self.close()
-        nextWindow = quest(self) #Переход к конечной вкладке
-        nextWindow.show()
-
+        with open("data\data.json", "r") as f:
+            data = json.load(f) 
+        if data["ApGenMode"]:
+            self.close()
+            nextWindow = quest(self) #Переход к конечной вкладке
+            nextWindow.show()
+        else:
+            pass
 class quest(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         
@@ -92,29 +98,12 @@ class quest(QtWidgets.QMainWindow):
         
         self.setWindowIcon(QIcon('icon.png'))
 
-        self.progressBar = QtWidgets.QProgressBar(self) #Создание прогресбара
-        self.progressBar.setGeometry(QtCore.QRect(80, 790, 811, 23))
-        self.progressBar.setStyleSheet("QProgressBar{\n"
-"    border: 2px solid grey;\n"
-"    border-radius: 5px;\n"
-"    text-align: center;\n"
-"    color:black;\n"
-"    font-family: arial black;\n"
-"}\n"
-"\n"
-"QProgressBar::chunk {\n"
-"    background-color: lightblue;\n"
-"    width: 10px;\n"
-"}")
-        self.progressBar.setProperty("value", 0) #Значение прогресабара по умолчанию
-        self.progressBar.setObjectName("progressBar")
-
         self.qst.Enter.clicked.connect(self.next)
         self.qst.question.setText(QuestList[0])   
         self.procent = 100 / (len(QuestList) - 1) #Расчёт прогрес бара
         self.step = 0 #Начальное значение
         
-        self.qst.email.setText(data["account"]["login"])
+        self.qst.email.setText(base64.b64decode(data['account']['login'].encode("UTF-8")).decode("UTF-8"))
         self.qst.email.adjustSize()
         self.qst.LogOut.clicked.connect(self.logOut)
         self.qst.back.clicked.connect(self.back)
@@ -124,22 +113,22 @@ class quest(QtWidgets.QMainWindow):
         win = selectMode(self)
         win.show()
     def logOut(self):
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file)
+        with open("data\data.json", "r") as f:
+            data = json.load(f) 
         
         data["account"]["login"] = None
         data["account"]["pasword"] = None
         data["enterInAccount"] = False
-        with open("data.json", "w") as write_file:
-            json.dump(data, write_file, indent = 4)
+        with open("data\data.json", "w") as w:
+            json.dump(data, w, indent = 4)
         
         self.close()
 
         
   
     def next(self):
-        with open("quest.json", "r") as read_file:
-            questData = json.load(read_file)
+        with open("data\quest.json", "r") as r:
+            questData = json.load(r)
 
         try:
             questData["answers"][str(self.questNum + 1)] = self.qst.questionAnswer.text()
@@ -148,28 +137,26 @@ class quest(QtWidgets.QMainWindow):
             self.questNum += 1
             self.qst.question.setText(QuestList[self.questNum])
             
-            with open("quest.json", "w") as write_file:
-                json.dump(questData, write_file, indent = 4)
+            with open("data\quest.json", "w") as w:
+                json.dump(questData, w, indent = 4)
 
-            
-            self.step += self.procent
-            self.progressBar.setValue(self.step)           
+                   
 
         except IndexError:
             self.qst.question.setText("Вопросы кончились")
-            anketa()
+            # anketa()
         
 
-    def anketa():
-        context = {}
-        with open("quest.json","r") as read_file:
-            questData = json.load(read_file)
-        doc = DocxTemplate("Novikontas application.doc")
-        for key in questData["answers"]:
-            context[key] = questData["answers"][key]
+    # def anketa(self):
+    #     context = {}
+    #     with open("quest.json","r") as read_file:
+    #         questData = json.load(read_file)
+    #     doc = DocxTemplate("Novikontas application.doc")
+    #     for key in questData["answers"]:
+    #         context[key] = questData["answers"][key]
         
-        doc.render(context)
-        doc.save("newDoc.docx")
+    #     doc.render(context)
+    #     doc.save("newDoc.docx")
 
 
 
@@ -213,7 +200,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
 
         self.form.sendForm_2.clicked.connect(self.sendForm) #Кнопка "Отправить"
 
-        self.form.email.setText(data["account"]["login"])
+        self.form.email.setText(base64.b64decode(data['account']['login'].encode("UTF-8")).decode("UTF-8"))
         self.form.email.adjustSize()
         self.form.LogOut.clicked.connect(self.logOut)
         self.form.back.clicked.connect(self.back)
@@ -229,30 +216,31 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         data["account"]["login"] = None
         data["account"]["pasword"] = None
         data["enterInAccount"] = False
-        with open("data.json", "w") as write_file:
-            json.dump(data, write_file, indent = 4)
+        with open("data\data.json", "w") as f:
+            json.dump(data, f, indent = 4)
         
         self.close()
 
         win = MyWin(self)
         win.show()        
     def showDialog(self):
-
+ 
         fname = QFileDialog.getOpenFileName(self, 'Open file') #Получение имени файла через проводник
 
         self.form.fileChose_2.setText(str(fname[0])) #Отображение пути к файлу
     
     def sendForm(self): #Рассылка сообщений
         print("Отправка сообщений")
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file)        
-        ent = entering(data['account']['login'], data['account']['pasword'])
+        with open("data\data.json", "r") as f:
+            data = json.load(f)     
+        ent = entering(base64.b64decode(data['account']['login'].encode("UTF-8")).decode("UTF-8"), base64.b64decode(data['account']['pasword'].encode("UTF-8")).decode("UTF-8"))
+        
         subj = self.form.subjEdit_2.text() #Получение темы
         body = self.form.body_2.toPlainText() #Получение текста
         file = self.form.fileChose_2.text() #Получение файла
 
         procent = 100 / len(BaseObl) #Расчёт прогрес бара
-        step = 0 #Начальное значение
+        value = 0 #Начальное значение
         try:
             for adress in BaseObl: #Функция отправки сообщений
                 try:
@@ -262,12 +250,17 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
                     contents=body, 
                     attachments=file,
                     )
-                    step += procent
-                    self.progressBar.setValue(step)
-
+                    for i in range(round(procent) + 1):
+                        value += 1
+                        self.progressBar.setValue(value)
+                        time.sleep(0.1)   
                     print("Отпрвлен на" + adress)
                 except yagmail.error.YagInvalidEmailAddress:
                     print("пропущен " + adress)
+                    for i in range(round(procent) + 1):
+                        value += 1
+                        self.progressBar.setValue(value)
+                        time.sleep(0.001)   
                     continue
                     
         except TypeError: #Исключение, если пропушена апликашка
@@ -278,12 +271,17 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
                     subject=subj,
                     contents=body, 
                     )      
-                    step += procent
-                    self.progressBar.setValue(step)
+                    for i in range(round(procent) + 1):
+                        value += 1
+                        self.progressBar.setValue(value)
+                        time.sleep(0.1)   
                     print("Отпрвлен на " + adress)     
                     
                 except yagmail.error.YagInvalidEmailAddress:
-                    print("пропущен " + adress)
+                    for i in range(round(procent) + 1):
+                        value += 1
+                        self.progressBar.setValue(value)
+                        time.sleep(0.1)   
                     continue
                     
 
@@ -295,9 +293,6 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
     
     def __init__(self, parent = None):
         super(SelectObj, self).__init__(parent)
-
-
-        
         self.so = Ui_SelectObl()
         self.so.setupUi(self)
         self.setWindowIcon(QIcon('icon.png'))
@@ -530,7 +525,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         BaseObl = ChernivetskaObl
         self.close()
         dial = selectMode(self)
-        
+    
         dial.show()         
 
     def chernigivska(self): #Чернигевская область
@@ -573,14 +568,11 @@ class MyWin(QtWidgets.QMainWindow):
         global ent
         # yag = yagmail.SMTP(self.ui.Email.text(), self.ui.Pasword.text())
         # yag.login()
+        with open("data\data.json", "r") as f:
+            data = json.load(f) 
 
-
-        with open("data.json", "r") as read_file:
-            data = json.load(read_file)
-
-        data['account']['login'] = self.ui.Email.text()
-
-        data['account']['pasword'] = self.ui.Pasword.text()
+        data['account']['login'] = base64.b64encode(self.ui.Email.text().encode("UTF-8")).decode("UTF-8")
+        data['account']['pasword'] = base64.b64encode(self.ui.Pasword.text().encode("UTF-8")).decode("UTF-8")
 
         with open("data.json", "w") as write_file:
             json.dump(data, write_file, indent = 4)
@@ -588,18 +580,19 @@ class MyWin(QtWidgets.QMainWindow):
         ent = entering(self.ui.Email.text(), self.ui.Pasword.text()) #Запоминание данных для входа
 
         if entering(self.ui.Email.text(), self.ui.Pasword.text()): #Проверка на правильлность логина и пароля
-            with open("data.json", "r") as read_file:
+            with open("data\data.json", "r") as read_file:
                 data = json.load(read_file) 
             data['enterInAccount'] = True       
         
-            with open("data.json", "w") as write_file:
+            with open("data\data.json", "w") as write_file:
                 json.dump(data, write_file, indent = 4)
-            self.dial = SelectObj(self)
+
             self.close()
+            self.dial = SelectObj(self)            
             self.dial.show()
 
         else:
-            self.ui.status.setText("Wrond email or pasword")  #Вывод ошибки
+            self.ui.status.setText("Wrong email or pasword")  #Вывод ошибки
 
 
 
@@ -627,17 +620,35 @@ def entering(email,pasword):
 if __name__ == "__main__":       
     app = QtWidgets.QApplication([])
 
-    with open("data.json", "r") as read_file:
+    with open("data\data.json", "r") as read_file:
         data = json.load(read_file)
     if data['enterInAccount']:
         try:
-            yag = yagmail.SMTP(data['account']['login'],data['account']['pasword'])
+            yag = yagmail.SMTP(base64.b64decode(data['account']['login'].encode("UTF-8")).decode("UTF-8"),base64.b64decode(data['account']['pasword'].encode("UTF-8")).decode("UTF-8"))
             yag.login()
-            application = BkTo()
+
+            if data["startPage"] == 1:
+                application = SelectObj()
+
+            if data["startPage"] == 2: 
+                application = selectMode()
+            
+            if data["startPage"] == 3:
+                application = quest()
+            
+            if data["startPage"] == 4:
+                application = MyForm()
+
+            if data["startPage"] == 5:
+                application = BkTo()
+
         except smtplib.SMTPAuthenticationError: #Исключение на случай ошибки авторизации от смтп
             print("Неверный логин или пароль")
             errorLogin = True
             application = MyWin()
+
+
+            
     else:
         application = MyWin()
 
