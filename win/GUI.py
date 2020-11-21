@@ -109,8 +109,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sailor Sender"))
-        self.Enter.setText(_translate("MainWindow", "Login"))
-        self.status.setText(_translate("MainWindow", "Awaiting entry"))
-        self.label.setText(_translate("MainWindow", "Status:"))
-        self.labeEmail.setText(_translate("MainWindow", "Email"))
-        self.labelPasword.setText(_translate("MainWindow", "Pasword"))
+        self.Enter.setText(_translate("MainWindow", "Вхід"))
+        self.status.setText(_translate("MainWindow", "Очикується вхід"))
+        self.label.setText(_translate("MainWindow", "Статус:"))
+        self.labeEmail.setText(_translate("MainWindow", "Пошта"))
+        self.labelPasword.setText(_translate("MainWindow", "Пароль"))

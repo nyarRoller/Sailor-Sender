@@ -225,9 +225,9 @@ class Ui_selectMode(object):
     def retranslateUi(self, selectMode):
         _translate = QtCore.QCoreApplication.translate
         selectMode.setWindowTitle(_translate("selectMode", "Sailor Sender"))
-        self.LogOut.setText(_translate("selectMode", "Log out"))
-        self.email.setText(_translate("selectMode", "Email Adress"))
-        self.back.setText(_translate("selectMode", "Back"))
+        self.LogOut.setText(_translate("selectMode", "Вийти"))
+        self.email.setText(_translate("selectMode", "Електронна пошта"))
+        self.back.setText(_translate("selectMode", "Назад"))
         self.ApGenerator.setText(_translate("selectMode", "Application Generator"))
         self.ManualMode.setText(_translate("selectMode", "Manual mode"))
-        self.label.setText(_translate("selectMode", "Select mode"))
+        self.label.setText(_translate("selectMode", "Оберіть режим"))

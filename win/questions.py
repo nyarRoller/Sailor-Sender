@@ -224,11 +224,11 @@ class Ui_QST(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sailor Sender"))
-        self.question.setText(_translate("MainWindow", "Вопрос"))
-        self.Enter.setText(_translate("MainWindow", "Next"))
-        self.bk.setText(_translate("MainWindow", "Back"))
-        self.LogOut.setText(_translate("selectMode", "Log out"))
-        self.email.setText(_translate("selectMode", "Email Adress"))
-        self.back.setText(_translate("selectMode", "Back"))
+        self.question.setText(_translate("MainWindow", "Питання"))
+        self.Enter.setText(_translate("MainWindow", "Наступне"))
+        self.bk.setText(_translate("MainWindow", "Назад"))
+        self.LogOut.setText(_translate("selectMode", "Вийти"))
+        self.email.setText(_translate("selectMode", "Електронна пошта"))
+        self.back.setText(_translate("selectMode", "Назад"))
         
 

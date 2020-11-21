@@ -104,7 +104,7 @@ class Ui_Dialog(object):
 "font-size: 18px;")
         self.text_2.setObjectName("text_2")
         self.fileAp_2 = QtWidgets.QLabel(self.bg)
-        self.fileAp_2.setGeometry(QtCore.QRect(60, 600, 91, 16))
+        self.fileAp_2.setGeometry(QtCore.QRect(60, 600, 150, 20))
         self.fileAp_2.setStyleSheet("font-family: Poppins-Regular;\n"
 "color: #333333;\n"
 "line-height: 1.2;\n"
@@ -237,11 +237,11 @@ class Ui_Dialog(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Poppins Medium\'; font-size:16pt; font-weight:56; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;\"><br /></p></body></html>"))
-        self.sendFile_2.setText(_translate("Dialog", "Выбрать файл"))
-        self.sendForm_2.setText(_translate("Dialog", "Отправить"))
-        self.theme_2.setText(_translate("Dialog", "Тема письма"))
-        self.text_2.setText(_translate("Dialog", "Текст письма"))
-        self.fileAp_2.setText(_translate("Dialog", "Апликашка"))
-        self.LogOut.setText(_translate("Dialog", "Log out"))
-        self.email.setText(_translate("Dialog", "Email Adress"))
-        self.back.setText(_translate("Dialog", "Back"))
+        self.sendFile_2.setText(_translate("Dialog", "Обрати файл"))
+        self.sendForm_2.setText(_translate("Dialog", "Відправити"))
+        self.theme_2.setText(_translate("Dialog", "Тема листа"))
+        self.text_2.setText(_translate("Dialog", "Текст листа"))
+        self.fileAp_2.setText(_translate("Dialog", "Резюме моряка"))
+        self.LogOut.setText(_translate("Dialog", "Вийти"))
+        self.email.setText(_translate("Dialog", "Електронна пошта"))
+        self.back.setText(_translate("Dialog", "Назад"))

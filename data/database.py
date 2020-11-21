@@ -1,4 +1,4 @@
-DonetskObl = ["nikita.yaremenko11@gmail.com", #Донецька область
+dataEmail = {"Море" : {'Донецька область' : ["nikita.yaremenko11@gmail.com", #Донецька область
 	"crew@adriatico.com.ua",
 	"aina-crewing@ukr.net",
 	"atlanta@atlanta-maritime.com",
@@ -60,24 +60,19 @@ DonetskObl = ["nikita.yaremenko11@gmail.com", #Донецька область
 	"uniprom-crewing@mail.ru",
 	"CREWING@INBOX.RU",
 	"tekkkon@e-mail.ua",
-	"mariupol@mitocean.com"
-
-]
-
-VinnitObl = ["nikita.yaremenko11@gmail.com","dram.mrpl@gmail.com","gilamij991@inbov03.com"] #Віницька Область
-VolinObl = ["nikita.yaremenko11@gmail.com"] #Волинська Область
-DniprObl = ["nikita.yaremenko11@gmail.com"] #Дніпропетровська Область
-ZjitObl = ["nikita.yaremenko11@gmail.com"] #Житомирська Область
-ZakarpatObl = ["nikita.yaremenko11@gmail.com"] #Закарпатська Область
-ZaporizObl = ["nikita.yaremenko11@gmail.com"] #Запорізька Область
-IvanoFrankObl = ["nikita.yaremenko11@gmail.com"] #Івано-Франківська Область
-KievskaObl = ["nikita.yaremenko11@gmail.com"] #Київська Область
-KirovogradObl = ["nikita.yaremenko11@gmail.com"] #Кіровоградська Область
-LuganskaObl = ["nikita.yaremenko11@gmail.com"] #Луганська Область
-LvivskaObl = ["nikita.yaremenko11@gmail.com"] #Львівська Область
-MikolaevObl = ["nikita.yaremenko11@gmail.com"] #Миколаївська Область
-Kiev = ["nikita.yaremenko11@gmail.com","nikita"] #Місто Київ
-OdeskaObl = ["nikita.yaremenko11@gmail.com",	#Одеська Область
+	"mariupol@mitocean.com"],
+	"Віницька область" : ["nikita.yaremenko11@gmail.com","dram.mrpl@gmail.com","gilamij991@inbov03.com"],
+	"Волинська область" : ["nikita.yaremenko11@gmail.com"],
+	"Дніпропетровська область" : ["nikita.yaremenko11@gmail.com"],
+	"Закарпаться область" : ["nikita.yaremenko11@gmail.com"],
+	"Запорізька область" : ["nikita.yaremenko11@gmail.com"],
+	"Київська область" : ["nikita.yaremenko11@gmail.com"],
+	"Кіровоградська область" : ["nikita.yaremenko11@gmail.com"],
+	"Луганська область" : ["nikita.yaremenko11@gmail.com"],
+	"Львівська область" : ["nikita.yaremenko11@gmail.com"],
+	"Миколаївська область" : ["nikita.yaremenko11@gmail.com"],
+	"Місто Київ" : ["nikita.yaremenko11@gmail.com","nikita"],
+	"Одеська область" : ["nikita.yaremenko11@gmail.com",
 	"info@mjsml.com",
 	"office@tcm-crewing.com",
 	"info@generalseaagency.com",
@@ -255,99 +250,20 @@ OdeskaObl = ["nikita.yaremenko11@gmail.com",	#Одеська Область
 	"info@azamaragroup.com",
 	"samtigaukraine@ukr.net",
 	"applicationodessavships@gmail.com",
-	"office@grandmarine.od.ua"] 
+	"office@grandmarine.od.ua"],
 	
-PoltavObl = ["nikita.yaremenko11@gmail.com"] #Полтавська Область
-RivnenskaObl = ["nikita.yaremenko11@gmail.com"] #Рівненська Область
-SumskaObl = ["nikita.yaremenko11@gmail.com"] #Сумська Область
-TernopilObl = ["nikita.yaremenko11@gmail.com"] #Тернопільска область
-HarkivObl = ["nikita.yaremenko11@gmail.com"] #Харківська Область
-HersonObl = ["nikita.yaremenko11@gmail.com"] #Херсонська Область
-HmelnitskaObl = ["nikita.yaremenko11@gmail.com"] #Хмельицька Область
-CherkaskaObl = ["nikita.yaremenko11@gmail.com"] #Черкаська Область
-ChernivetskaObl = ["nikita.yaremenko11@gmail.com"] #Чернівецька Область
-ChernigivskaObl = ["nikita.yaremenko11@gmail.com"] #Чернігівська Область
-fUkraine = ["nikita.yaremenko11@gmail.com"] #Вся Україна
-
+"Полтавська область" : ["nikita.yaremenko11@gmail.com"], 
+"Сумська область" : ["nikita.yaremenko11@gmail.com"], 
+"Тернопільска область" : ["nikita.yaremenko11@gmail.com"],
+"Харківська область" : ["nikita.yaremenko11@gmail.com"], 
+"Херсонська область" : ["nikita.yaremenko11@gmail.com"], 
+"Черкаська область" : ["nikita.yaremenko11@gmail.com"], 
+"Чернвецька область" : ["nikita.yaremenko11@gmail.com"], 
+"Чернігівська область" : ["nikita.yaremenko11@gmail.com"],
+"Вся Україна" : ["nikita.yaremenko11@gmail.com"]
+}
+}
 fUkraine = []
-
-
-for adress in DonetskObl:
-	fUkraine.append(adress)
-
-for adress in VinnitObl:
-	fUkraine.append(adress)
-
-for adress in VolinObl:
-	fUkraine.append(adress)
-
-for adress in DniprObl:
-	fUkraine.append(adress)
-
-for adress in ZjitObl:
-	fUkraine.append(adress)
-
-for adress in IvanoFrankObl:
-	fUkraine.append(adress)
-
-for adress in ZakarpatObl:
-	fUkraine.append(adress)
-
-for adress in ZaporizObl:
-	fUkraine.append(adress)
-
-for adress in KievskaObl:
-	fUkraine.append(adress)
-
-for adress in KirovogradObl:
-	fUkraine.append(adress)
-
-for adress in LuganskaObl:
-	fUkraine.append(adress)
-
-for adress in LvivskaObl:
-	fUkraine.append(adress)
-
-for adress in MikolaevObl:
-	fUkraine.append(adress)
-
-for adress in Kiev:
-	fUkraine.append(adress)
-
-for adress in OdeskaObl:
-	fUkraine.append(adress)
-
-for adress in PoltavObl:
-	fUkraine.append(adress)
-
-for adress in RivnenskaObl:
-	fUkraine.append(adress)
-
-for adress in SumskaObl:
-	fUkraine.append(adress)
-
-for adress in TernopilObl:
-	fUkraine.append(adress)
-
-for adress in HarkivObl:
-	fUkraine.append(adress)
-
-for adress in HersonObl:
-	fUkraine.append(adress)
-
-for adress in HmelnitskaObl:
-	fUkraine.append(adress)
-
-for adress in CherkaskaObl:
-	fUkraine.append(adress)
-
-for adress in ChernigivskaObl:
-	fUkraine.append(adress)
-
-for adress in ChernivetskaObl:
-	fUkraine.append(adress)
-
-
 
 QuestList = ["Name",
 	"Surname",

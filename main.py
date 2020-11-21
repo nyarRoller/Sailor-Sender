@@ -331,14 +331,14 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
     def odessa(self):
         global BaseObl
 
-        BaseObl = OdeskaObl
+        BaseObl = dataEmail["Море"]["Одеська область"]
         self.close()
         dial = selectMode(self)
         dial.show()
         
     def vinits(self): #Виницкая область
         global BaseObl
-        BaseObl = VinnitObl
+        BaseObl = dataEmail["Море"]["Віницька область"]
 
         self.close()
         dial = selectMode(self)
@@ -346,7 +346,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def volin(self): #Волинская область
         global BaseObl
-        BaseObl = VolinObl
+        BaseObl = dataEmail["Море"]["Волинська область"]
         self.close()
         dial = selectMode(self)
         
@@ -354,7 +354,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def dnipro(self): #Днипропетровская область
         global BaseObl
-        BaseObl = DniprObl
+        BaseObl = dataEmail["Море"]["Дніпропетровська"]
         self.close()
         dial = selectMode(self)
         
@@ -362,7 +362,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def dontes(self): #Донецкая область
         global BaseObl
-        BaseObl = DonetskObl
+        BaseObl = dataEmail["Море"]["Донецька область"]
         self.close()
         dial = selectMode(self)
         
@@ -370,7 +370,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def zhitomir(self): #Житомирская область
         global BaseObl
-        BaseObl = ZjitObl
+        BaseObl = dataEmail["Море"]["Житомирська област"]
         self.close()
         dial = selectMode(self)
         
@@ -378,7 +378,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def zakarpat(self): #Закарпатская область
         global BaseObl
-        BaseObl = ZakarpatObl
+        BaseObl = dataEmail["Море"]["Закарпатська область"]
         self.close()
         dial = selectMode(self)
         
@@ -386,7 +386,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def zaporis(self): #Запорижская область
         global BaseObl
-        BaseObl = ZaporizObl
+        BaseObl = dataEmail["Море"]["Запоріжська область"]
         self.close()
         dial = selectMode(self)
         
@@ -394,7 +394,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
     
     def ivanofrank(self): #Иванофранковская область
         global BaseObl
-        BaseObl = IvanoFrankObl
+        BaseObl = dataEmail["Море"]["Іванофранківська область"]
         self.close()
         dial = selectMode(self)
         
@@ -402,7 +402,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def kievska(self): #Киевская область
         global BaseObl
-        BaseObl = KievskaObl
+        BaseObl = dataEmail["Море"]["Київська область"]
         self.close()
         dial = selectMode(self)
         
@@ -410,7 +410,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def kirovograd(self): #Кировоградская область
         global BaseObl
-        BaseObl = KirovogradObl
+        BaseObl = dataEmail["Море"]["Кіровоградська область"]
         self.close()
         dial = selectMode(self)
         
@@ -418,7 +418,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def lugansk(self): #Луганская область
         global BaseObl
-        BaseObl = LuganskaObl
+        BaseObl = dataEmail["Море"]["Луганська область"]
         self.close()
         dial = selectMode(self)
         
@@ -426,7 +426,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def lvivsk(self): #Львовская область
         global BaseObl
-        BaseObl = LvivskaObl
+        BaseObl = dataEmail["Море"]["Львівська область"]
         self.close()
         dial = selectMode(self)
         
@@ -434,7 +434,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def mikolaevsk(self): #Миколаевская область
         global BaseObl
-        BaseObl = MikolaevObl
+        BaseObl = dataEmail["Море"]["Миколаївська область"]
         self.close()
         dial = selectMode(self)
         
@@ -442,7 +442,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def mstKiev(self): #Город Киев
         global BaseObl
-        BaseObl = Kiev
+        BaseObl = dataEmail["Море"]["Місто Київ"]
         self.close()
         dial = selectMode(self)
         
@@ -450,7 +450,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def harkivsk(self): #Харьковская область
         global BaseObl
-        BaseObl = HarkivObl
+        BaseObl = dataEmail["Море"]["Харківська область"]
         self.close()
         dial = selectMode(self)
        
@@ -465,7 +465,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def poltavska(self): #Полтавская область
         global BaseObl
-        BaseObl = PoltavObl
+        BaseObl = dataEmail["Море"]["Полтавська область"]
         self.close()
         dial = selectMode(self)
         
@@ -473,7 +473,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def rivnenska(self): #Ровенская область
         global BaseObl
-        BaseObl = RivnenskaObl
+        BaseObl = dataEmail["Море"]["Рівненська область"]
         self.close()
         dial = selectMode(self)
         
@@ -482,7 +482,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def sumska(self): #Сумская область
         global BaseObl
-        BaseObl = SumskaObl
+        BaseObl = dataEmail["Море"]["Сумська область"]
         self.close()
         dial = selectMode(self)
         
@@ -491,7 +491,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def ternopilska(self): #Тернопольская область
         global BaseObl
-        BaseObl = TernopilObl
+        BaseObl = dataEmail["Море"]["Тернопільська область"]
         self.close()
         dial = selectMode(self)
        
@@ -499,7 +499,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def hersonska(self): #Херсонская область
         global BaseObl
-        BaseObl = HersonObl
+        BaseObl = dataEmail["Море"]["Херсонька область"]
         self.close()
         dial = selectMode(self)
         
@@ -507,7 +507,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def hmelnitska(self): #Хмельницкая область
         global BaseObl
-        BaseObl = HmelnitskaObl
+        BaseObl = dataEmail["Море"]["Хмельницька область"]
         self.close()
         dial = selectMode(self)
         
@@ -515,7 +515,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def cherkaska(self): #Черкаская область
         global BaseObl
-        BaseObl = CherkaskaObl
+        BaseObl = dataEmail["Море"]["Черкаська область"]
         self.close()
         dial = selectMode(self)
         
@@ -523,7 +523,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def chernivetska(self): #Чернивецкая область
         global BaseObl
-        BaseObl = ChernivetskaObl
+        BaseObl = dataEmail["Море"]["Чернивецька область"]
         self.close()
         dial = selectMode(self)
     
@@ -531,7 +531,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def chernigivska(self): #Чернигевская область
         global BaseObl
-        BaseObl = ChernigivskaObl
+        BaseObl = dataEmail["Море"]["Чернігіська"]
         self.close()
         dial = selectMode(self)
         
@@ -539,7 +539,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def fullUkraine(self): #Вся Украина
         global BaseObl
-        BaseObl = fUkraine
+        BaseObl = dataEmail["Море"]["Вся Україна"]
         self.close()
         dial = selectMode(self)
         

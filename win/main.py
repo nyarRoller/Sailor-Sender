@@ -330,7 +330,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
     def odessa(self):
         global BaseObl
 
-        BaseObl = OdeskaObl
+        BaseObl = database["Одеська область"]
         self.close()
         dial = selectMode(self)
         dial.show()

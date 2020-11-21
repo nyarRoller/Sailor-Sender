@@ -95,7 +95,7 @@ class Ui_BackTo(object):
     def retranslateUi(self, BackTo):
         _translate = QtCore.QCoreApplication.translate
         BackTo.setWindowTitle(_translate("BackTo", "Sailor Sender"))
-        self.Back.setText(_translate("BackTo", "Выйти"))
-        self.label.setText(_translate("BackTo", "Рассылка успешно выполнена"))
-        self.label_2.setText(_translate("BackTo", "Чтобы выйти из программы"))
-        self.label_3.setText(_translate("BackTo", "Нажмите на кнопку ниже"))
+        self.Back.setText(_translate("BackTo", "Вийти"))
+        self.label.setText(_translate("BackTo", "Розсилка пройшла вдало"))
+        self.label_2.setText(_translate("BackTo", "Для того, щоб вийти з програми"))
+        self.label_3.setText(_translate("BackTo", "Натисніть на кнопку нижче"))
