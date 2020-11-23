@@ -15,7 +15,7 @@ while run:
     print(value,n)
     if mas + miNew[n]  <= m:
         mas += miNew[n]
-        answer.append(mi.index(miNew[n])+1)
+        answer.append(mi.index(miNew[n])+1)xD
         miNew.pop(n)
         ciNew.pop(n) 
         print("succsesful", value)
