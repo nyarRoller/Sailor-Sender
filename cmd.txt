@@ -1,0 +1,10 @@
+D:\Sailor-Sender\Sailor-Sender>git add .
+
+D:\Sailor-Sender\Sailor-Sender>git commit -m 'sfsdf'
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+D:\Sailor-Sender\Sailor-Sender>git push origin master
+Everything up-to-date

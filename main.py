@@ -68,25 +68,31 @@ class selectMode(QtWidgets.QMainWindow):
         
 
         self.win = MyWin(self)
-        self.win.show()
         self.close()
+        self.win.show()
+
         
     def ManualModeFunk(self):
-        
-        self.close()
-        nextWindow = MyForm(self) #Переход к конечной вкладке
-        nextWindow.show()
+        try:
+            self.close()
+            nextWindow = MyForm(self) #Переход к конечной вкладке
+            nextWindow.show()
+        except:
+            self.close()
+            nextWin = selectMode(self)
+            nextWin.show()
 
 
     def ApMode(self):
-        with open("data\data.json", "r") as f:
-            data = json.load(f) 
-        if data["ApGenMode"]:
+        try:
             self.close()
             nextWindow = quest(self) #Переход к конечной вкладке
             nextWindow.show()
-        else:
-            pass
+        except:
+            self.close()
+            nextWin = selectMode(self)
+            nextWin.show()
+
 class quest(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         
@@ -124,7 +130,8 @@ class quest(QtWidgets.QMainWindow):
             json.dump(data, w, indent = 4)
         
         self.close()
-
+        win = MyWin(self)
+        win.show() 
         
   
     def next(self):
@@ -211,7 +218,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         win = selectMode(self)
         win.show()
     def logOut(self):
-        with open("data.json", "r") as read_file:
+        with open("data/data.json", "r") as read_file:
             data = json.load(read_file)
         
         data["account"]["login"] = None
@@ -594,7 +601,7 @@ class MyWin(QtWidgets.QMainWindow):
             self.close()
 
         else:
-            self.ui.status.setText("Wrong email or pasword")  #Вывод ошибки
+            self.ui.status.setText("Невірний пароль")  #Вывод ошибки
 
 
 
@@ -605,12 +612,13 @@ def entering(email,pasword):
     try: #Попытка  входа
         yag.login()
 
-    except yagmail.error.YagInvalidEmailAddress: #Исключение на случай неверного формата адреса
-            print("Invalid email")
-            return False
 
     except smtplib.SMTPAuthenticationError: #Исключение на случай ошибки авторизации от смтп
-            print("Wrong email or pasword")
+            print("Невірно вказано логін або пароль")
+            return False
+
+    except yagmail.error.YagInvalidEmailAddress: #Исключение на случай неверного формата адреса
+            print("Невірно вказано електронну пошту")
             return False
     return yag
 
@@ -652,7 +660,6 @@ if __name__ == "__main__":
             print("nonetype")
             errorLogin = True
             application = MyWin()            
-
 
             
     else:

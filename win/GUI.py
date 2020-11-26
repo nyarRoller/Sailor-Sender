@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
 
         self.Email.setObjectName("Email")
         self.labeEmail = QtWidgets.QLabel(self.widget)
-        self.labeEmail.setGeometry(QtCore.QRect(80, 140, 51, 20))
+        self.labeEmail.setGeometry(QtCore.QRect(80, 140, 70, 20))
         self.labeEmail.setMinimumSize(QtCore.QSize(0, 13))
         self.labeEmail.setStyleSheet("font-family: Poppins-Regular;\n"
 "color: #333333;\n"
