@@ -64,7 +64,7 @@ dataEmail = {"Море" : {'Донецька область' : ["nikita.yaremenk
 	"Віницька область" : ["nikita.yaremenko11@gmail.com","dram.mrpl@gmail.com","gilamij991@inbov03.com"],
 	"Волинська область" : ["nikita.yaremenko11@gmail.com"],
 	"Дніпропетровська область" : ["nikita.yaremenko11@gmail.com"],
-	"Закарпаться область" : ["nikita.yaremenko11@gmail.com"],
+	"Закарпатська область" : ["nikita.yaremenko11@gmail.com"],
 	"Запорізька область" : ["nikita.yaremenko11@gmail.com"],
 	"Київська область" : ["nikita.yaremenko11@gmail.com"],
 	"Кіровоградська область" : ["nikita.yaremenko11@gmail.com"],
@@ -260,7 +260,8 @@ dataEmail = {"Море" : {'Донецька область' : ["nikita.yaremenk
 "Черкаська область" : ["nikita.yaremenko11@gmail.com"], 
 "Чернвецька область" : ["nikita.yaremenko11@gmail.com"], 
 "Чернігівська область" : ["nikita.yaremenko11@gmail.com"],
-"Вся Україна" : ["nikita.yaremenko11@gmail.com"]
+"Вся Україна" : ["nikita.yaremenko11@gmail.com"],
+"Житомирська область" : ["nikita.yaremenko11@gamil.com"]
 }
 }
 fUkraine = []

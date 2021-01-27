@@ -28,6 +28,7 @@ from win.questions import *
 from win.selectMode import *
 from docxtpl import DocxTemplate
 import json
+import temp.yagmail.__init__ 
 errorLogin = True
 
 
@@ -263,7 +264,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
                         self.progressBar.setValue(value)
                         time.sleep(0.1)   
                     print("Отпрвлен на" + adress)
-                except yagmail.error.YagInvalidEmailAddress:
+                except smtplib.SMTPRecipientsRefused:
                     print("пропущен " + adress)
                     for i in range(round(procent) + 1):
                         value += 1
@@ -285,7 +286,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
                         time.sleep(0.1)   
                     print("Отпрвлен на " + adress)     
                     
-                except yagmail.error.YagInvalidEmailAddress:
+                except smtplib.SMTPRecipientsRefused:
                     for i in range(round(procent) + 1):
                         value += 1
                         self.progressBar.setValue(value)
@@ -361,7 +362,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def dnipro(self): #Днипропетровская область
         global BaseObl
-        BaseObl = dataEmail["Море"]["Дніпропетровська"]
+        BaseObl = dataEmail["Море"]["Дніпропетровська область"]
         self.close()
         dial = selectMode(self)
         
@@ -377,7 +378,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def zhitomir(self): #Житомирская область
         global BaseObl
-        BaseObl = dataEmail["Море"]["Житомирська област"]
+        BaseObl = dataEmail["Море"]["Житомирська область"]
         self.close()
         dial = selectMode(self)
         
@@ -393,7 +394,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
     def zaporis(self): #Запорижская область
         global BaseObl
-        BaseObl = dataEmail["Море"]["Запоріжська область"]
+        BaseObl = dataEmail["Море"]["Запорізька область"]
         self.close()
         dial = selectMode(self)
         
@@ -462,14 +463,7 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial = selectMode(self)
        
         dial.show()         
-
-    def odeska(self): #Одеская область
-        global BaseObl
-        BaseObl = OdeskaObl
-        self.close()
-        dial = selectMode(self)
-        dial.show()         
-
+  
     def poltavska(self): #Полтавская область
         global BaseObl
         BaseObl = dataEmail["Море"]["Полтавська область"]
@@ -618,7 +612,7 @@ def entering(email,pasword):
             return False
 
     except yagmail.error.YagInvalidEmailAddress: #Исключение на случай неверного формата адреса
-            print("Невірно вказано електронну пошту")
+            print("Не вірно вказано електронну пошту")
             return False
     return yag
 
