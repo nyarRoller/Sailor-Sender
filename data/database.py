@@ -289,4 +289,17 @@ QuestList = ["Name",
 	"National Pasport Issued",
 	"National Pasport Valid",
 	"National Pasport Country/City",
+	"National Seaman's Book Number",
+	"National Seaman's Book Issued",
+	"National Seaman's Book Valid",
+	"National Seaman's Book Country/City",
+	"License ___Diplome_____(GRADE) Number",
+	"License ___Diplome_____(GRADE) Issued",
+	"License ___Diplome_____(GRADE) Valid",
+	"License ___Diplome_____(GRADE) Country/City",
+	"Solas Number",
+	"Solas Issued",
+	"Solas Valid",
+	"Solas Country/City"
+
 	]

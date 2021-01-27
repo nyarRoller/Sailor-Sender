@@ -2,7 +2,7 @@ import yagmail
 import sys
 
 import base64
-
+from pathlib import Path
 import smtplib
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -32,8 +32,14 @@ import temp.yagmail.__init__
 errorLogin = True
 
 
-
-
+def getId(dct,i):
+    localI = 0
+    for key in dct:
+        if localI == i:
+            return key 
+        else:
+            localI += 1
+form = False
 class selectMode(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         QtWidgets.QWidget.__init__(self,parent)
@@ -140,7 +146,7 @@ class quest(QtWidgets.QMainWindow):
             questData = json.load(r)
 
         try:
-            questData["answers"][str(self.questNum + 1)] = self.qst.questionAnswer.text()
+            questData["answers"][getId(questData["answers"],self.questNum)] = self.qst.questionAnswer.text()
             questData["questCount"] = self.questNum
             self.qst.questionAnswer.setText("")
             self.questNum += 1
@@ -152,21 +158,23 @@ class quest(QtWidgets.QMainWindow):
                    
 
         except IndexError:
-            self.qst.question.setText("Вопросы кончились")
-            # anketa()
-        
-
-    # def anketa(self):
-    #     context = {}
-    #     with open("quest.json","r") as read_file:
-    #         questData = json.load(read_file)
-    #     doc = DocxTemplate("Novikontas application.doc")
-    #     for key in questData["answers"]:
-    #         context[key] = questData["answers"][key]
-        
-    #     doc.render(context)
-    #     doc.save("newDoc.docx")
-
+            self.qst.question.setText("Формування резюме, зачекайте")
+            
+            context = {}
+            with open("data/quest.json","r") as read_file:
+                questData = json.load(read_file)
+            doc = DocxTemplate("Novikontas application.docx")
+            for key in questData["answers"]:
+                context[key] = questData["answers"][key]
+            
+            doc.render(context)
+            doc.save("newDoc.docx")
+            global form
+            form = True
+            print("Suc form")
+            win = MyForm(self)
+            self.close()
+            win.show()
 
 
 class BkTo(QtWidgets.QDialog): #Форма для выхода из программы
@@ -204,6 +212,9 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
 
         self.progressBar.setProperty("value", 0) #Значение прогресабара по умолчанию
         self.progressBar.setObjectName("progressBar")
+        if form:
+         self.form.fileChose_2.setText(str(Path("newDoc.docx")))
+         self.form.sendFile_2.setEnabled(False)
 
         self.form.sendFile_2.clicked.connect(self.showDialog) #Кнопка прикрепить файл
 
