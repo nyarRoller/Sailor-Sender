@@ -54,7 +54,7 @@ class selectMode(QtWidgets.QMainWindow):
 
     def back(self):
         self.close()
-        win = SelectObj(self)
+        win = SelectObj(self)   
         win.show()
     def logOut(self):
         with open("data\data.json", "r") as f:
@@ -184,7 +184,7 @@ class BkTo(QtWidgets.QDialog): #Форма для выхода из програ
 class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
     def __init__(self, parent = None):
         super(MyForm, self).__init__(parent)
-        self.form = Ui_Dialog() #иницилизация диалога
+        self.form = Ui_Dialog() 
         self.form.setupUi(self)
         self.setWindowIcon(QIcon('icon.png'))
         self.progressBar = QtWidgets.QProgressBar(self) #Создание прогресбара

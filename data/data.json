@@ -2,10 +2,10 @@
     "questCount": 0,
     "answers": [],
     "account": {
-        "login": "bmlraXRhLnlhcmVtZW5rbzExQGdtYWlsLmNvbQ==",
-        "pasword": "eWJyYm5mMTEyMzIz"
+        "login": null,
+        "pasword": null
     },
-    "enterInAccount": true,
+    "enterInAccount": false,
     "ApGenMode": true,
     "startPage": 1
 }

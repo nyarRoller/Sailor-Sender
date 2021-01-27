@@ -1056,7 +1056,6 @@ class Ui_SelectObl(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.frame.raise_()
-        self.frame.setStyleSheet("background-image: url(Login_v5/images/bg-01.jpg);")
         self.Vintis.raise_()
         self.Volinsk.raise_()
         self.Dnipropentrovsk.raise_()

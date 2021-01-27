@@ -110,7 +110,7 @@ class Ui_selectMode(object):
 "  background-color: #545454;\n"
 "}\n")
         self.back.setObjectName("back")
-        self.bg = QtWidgets.QLabel(self.centralwidget)
+        self.bg = QtWidgets.QFrame(self.centralwidget)
         self.bg.setGeometry(QtCore.QRect(-10, -20, 1001, 811))
         self.bg.setObjectName("bg")
         self.widget = QtWidgets.QWidget(self.centralwidget)
@@ -212,8 +212,9 @@ class Ui_selectMode(object):
         self.label.setStyleSheet("font-family: Poppins-Regular;\n"
 "font-size: 40px;")
         self.label.setObjectName("label")
+        self.bg.setStyleSheet("background-image: url(bg-01.jpg)")
         self.bg.raise_()
-        self.bg.setPixmap(QPixmap("bg-01.jpg"))
+
         self.bg.adjustSize()
         self.log.raise_()
         self.widget.raise_()
