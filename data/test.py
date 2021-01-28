@@ -1,26 +1,3 @@
-n = input()
+import base64
 
-mas = list(map(int, input().split()))
-
-st = 0
-
-suc = False
-if mas[0] == mas[-1]:
-    st = 1
-
-for element in mas:
-    k = st
-    for i in range(len(mas)-1):
-        if mas[i] == element and mas[i + 1] == element:
-            k += 1
-
-        if k == 2:
-            suc = True
-            break
-    if suc:
-        break
-
-if suc:
-    print("Yes")
-else:
-    print("No")
+print(base64.b64decode("eWJyYm5mMTEyMzIz".encode("UTF-8")).decode("UTF-8") )

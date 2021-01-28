@@ -2,7 +2,7 @@ import yagmail
 import sys
 
 import base64
-from pathlib import Path
+import os
 import smtplib
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -205,7 +205,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
 "    font-family: arial black;\n"
 "}\n"
 "\n"
-"QProgressBar::chunk {\n"
+"QProgr essBar::chunk {\n"
 "    background-color: lightblue;\n"
 "    width: 10px;\n"
 "}")
@@ -213,8 +213,9 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         self.progressBar.setProperty("value", 0) #Значение прогресабара по умолчанию
         self.progressBar.setObjectName("progressBar")
         if form:
-         self.form.fileChose_2.setText(str(Path("newDoc.docx")))
+         self.form.fileChose_2.setText(str(os.path.abspath("newDoc.docx")))
          self.form.sendFile_2.setEnabled(False)
+         self.form.fileChose_2.setEnabled(False)
 
         self.form.sendFile_2.clicked.connect(self.showDialog) #Кнопка прикрепить файл
 
