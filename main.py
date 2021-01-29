@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from win.GUI import *
 
-from data.database import *
+# from data.database import *
 
 import time
 import codecs
@@ -345,26 +345,31 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         self.so.Ukraine.clicked.connect(self.fullUkraine)
         self.so.Ternopilska.clicked.connect(self.ternopilska)
         self.so.Hersonska.clicked.connect(self.hersonska)
-        self.so.Odeska.clicked.connect(self.odessa)
+        self.so.Odeska.clicked.connect(self.odessa)  
+
 
 #Работа кнопок
     def odessa(self):
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
-
         BaseObl = dataEmail["Море"]["Одеська область"]
         self.close()
         dial = selectMode(self)
         dial.show()
         
     def vinits(self): #Виницкая область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)
         global BaseObl
         BaseObl = dataEmail["Море"]["Віницька область"]
-
         self.close()
         dial = selectMode(self)
         dial.show()         
 
     def volin(self): #Волинская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Волинська область"]
         self.close()
@@ -373,6 +378,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def dnipro(self): #Днипропетровская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Дніпропетровська область"]
         self.close()
@@ -381,6 +388,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def dontes(self): #Донецкая область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)
         global BaseObl
         BaseObl = dataEmail["Море"]["Донецька область"]
         self.close()
@@ -389,6 +398,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def zhitomir(self): #Житомирская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Житомирська область"]
         self.close()
@@ -397,6 +408,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def zakarpat(self): #Закарпатская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)
         global BaseObl
         BaseObl = dataEmail["Море"]["Закарпатська область"]
         self.close()
@@ -405,6 +418,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def zaporis(self): #Запорижская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Запорізька область"]
         self.close()
@@ -413,6 +428,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
     
     def ivanofrank(self): #Иванофранковская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Іванофранківська область"]
         self.close()
@@ -421,6 +438,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def kievska(self): #Киевская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Київська область"]
         self.close()
@@ -429,6 +448,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def kirovograd(self): #Кировоградская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Кіровоградська область"]
         self.close()
@@ -437,6 +458,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def lugansk(self): #Луганская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Луганська область"]
         self.close()
@@ -445,6 +468,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def lvivsk(self): #Львовская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Львівська область"]
         self.close()
@@ -453,6 +478,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def mikolaevsk(self): #Миколаевская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Миколаївська область"]
         self.close()
@@ -461,6 +488,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def mstKiev(self): #Город Киев
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Місто Київ"]
         self.close()
@@ -469,6 +498,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def harkivsk(self): #Харьковская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Харківська область"]
         self.close()
@@ -477,6 +508,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
   
     def poltavska(self): #Полтавская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Полтавська область"]
         self.close()
@@ -485,6 +518,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def rivnenska(self): #Ровенская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Рівненська область"]
         self.close()
@@ -494,6 +529,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
 
     def sumska(self): #Сумская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Сумська область"]
         self.close()
@@ -503,6 +540,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
 
 
     def ternopilska(self): #Тернопольская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Тернопільська область"]
         self.close()
@@ -511,6 +550,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def hersonska(self): #Херсонская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Херсонька область"]
         self.close()
@@ -519,6 +560,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def hmelnitska(self): #Хмельницкая область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Хмельницька область"]
         self.close()
@@ -527,6 +570,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def cherkaska(self): #Черкаская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Черкаська область"]
         self.close()
@@ -535,6 +580,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def chernivetska(self): #Чернивецкая область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Чернивецька область"]
         self.close()
@@ -543,6 +590,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def chernigivska(self): #Чернигевская область
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Чернігіська"]
         self.close()
@@ -551,6 +600,8 @@ class SelectObj(QtWidgets.QMainWindow): #Выбор области
         dial.show()         
 
     def fullUkraine(self): #Вся Украина
+        with open("database.json", "r", encoding = "utf-8") as f:
+            dataEmail = json.load(f)        
         global BaseObl
         BaseObl = dataEmail["Море"]["Вся Україна"]
         self.close()
