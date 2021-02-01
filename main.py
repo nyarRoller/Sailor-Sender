@@ -11,12 +11,12 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from win.GUI import *
 
-# from data.database import *
+from data.database import QuestList
 
 import time
 import codecs
 from win.back import *
-
+from win.fileDialog import *
 from enum import Enum, auto
 
 from win.dialog import *
@@ -30,7 +30,8 @@ from docxtpl import DocxTemplate
 import json
 import temp.yagmail.__init__ 
 errorLogin = True
-
+global infoText
+infoText = "None"
 
 def getId(dct,i):
     localI = 0
@@ -113,6 +114,7 @@ class quest(QtWidgets.QMainWindow):
         self.setWindowIcon(QIcon('icon.png'))
 
         self.qst.Enter.clicked.connect(self.next)
+        
         self.qst.question.setText(QuestList[0])   
         self.procent = 100 / (len(QuestList) - 1) #Расчёт прогрес бара
         self.step = 0 #Начальное значение
@@ -176,6 +178,50 @@ class quest(QtWidgets.QMainWindow):
             self.close()
             win.show()
 
+
+class Error(QtWidgets.QDialog):
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+        self.setWindowTitle("Пропущено путь")
+        self.setWindowIcon(QIcon('icon.png'))        
+        self.setObjectName("MainWindow")
+        self.sizeX, self.sizeY = 400, 200
+        self.resize(self.sizeX, self.sizeY)
+        self.setMinimumSize(QtCore.QSize(self.sizeX, self.sizeY))
+        self.setMaximumSize(QtCore.QSize(self.sizeX, self.sizeY))
+        self.setStyleSheet("background-color: ")   
+        global infoText 
+        self.label = QtWidgets.QLabel(infoText,self)
+        self.label.setGeometry(QtCore.QRect(self.sizeX//2 - 25 ,self.sizeY//2-40 ,110, 30))
+        font = QtGui.QFont()
+        font.setFamily("Poppins-Regular")
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(35)
+        self.label.setFont(font)
+        self.label.setStyleSheet("font-family: Poppins-Regular;\n"
+"font-size: 20px;")
+        self.btn = QtWidgets.QPushButton('Ok', self)
+        self.btn.setGeometry(QtCore.QRect(self.sizeX//2 - 50, self.sizeY - 20 - 31, 100, 31))        
+        self.btn.setStyleSheet("QPushButton {\n"
+"background-color: #333333;\n"
+"border-radius: 10px;\n"
+"\n"
+"font-family: Poppins-Medium;\n"
+"font-size: 16px;\n"
+"color: #fff;\n"
+"line-height: 1.2;\n"
+"}\n"
+"QPushButton:hover {\n"
+"  background-color: #545454;\n"
+"}\n"
+)
+ 
 
 class BkTo(QtWidgets.QDialog): #Форма для выхода из программы
     
@@ -246,9 +292,13 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         win.show()        
     def showDialog(self):
  
-        fname = QFileDialog.getOpenFileName(self, 'Open file') #Получение имени файла через проводник
-
-        self.form.fileChose_2.setText(str(fname[0])) #Отображение пути к файлу
+        fname = Dialog(self) #Получение имени файла через проводник
+        fname.filters = ["Doc files (*.doc, *.docx, *.pdf)"]
+        fname.default_filter_index = 0
+        # fname.getOpenFileName(self, 'Open file')
+        fname.exec()
+        print('{0}/{1}'.format(fname.filename[0], fname.filename[1]))
+        self.form.fileChose_2.setText(str('{0}/{1}'.format(fname.filename[0], fname.filename[1]))) #Отображение пути к файлу
     
     def sendForm(self): #Рассылка сообщений
         print("Отправка сообщений")
@@ -283,32 +333,17 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
                         self.progressBar.setValue(value)
                         time.sleep(0.001)   
                     continue
-                    
+            self.close()
+            BackForm = BkTo(self) #Переход к конечной вкладке
+            BackForm.exec_()                    
         except TypeError: #Исключение, если пропушена апликашка
-            for adress in BaseObl:
-                try:
-                    ent.send(
-                    to= adress,
-                    subject=subj,
-                    contents=body, 
-                    )      
-                    for i in range(round(procent) + 1):
-                        value += 1
-                        self.progressBar.setValue(value)
-                        time.sleep(0.1)   
-                    print("Отпрвлен на " + adress)     
-                    
-                except smtplib.SMTPRecipientsRefused:
-                    for i in range(round(procent) + 1):
-                        value += 1
-                        self.progressBar.setValue(value)
-                        time.sleep(0.1)   
-                    continue
-                    
+            global infoText
+            infoText = "Укажіть путь до резюме, будь-ласка"
+            win = Error(self)
+            win.show()
+            
 
-        self.close()
-        BackForm = BkTo(self) #Переход к конечной вкладке
-        BackForm.exec_()
+
 
 class SelectObj(QtWidgets.QMainWindow): #Выбор области
     
@@ -708,13 +743,15 @@ if __name__ == "__main__":
 
             if data["startPage"] == 5:
                 application = BkTo()
+            if data["startPage"] == 6:
+                application = Error()                
 
         except smtplib.SMTPAuthenticationError: #Исключение на случай ошибки авторизации от смтп
             print("Неверный логин или пароль")
             errorLogin = True
             application = MyWin()
-        except AttributeError:
-            print("nonetype")
+        except AttributeError as e:
+            print(e)
             errorLogin = True
             application = MyWin()            
 
