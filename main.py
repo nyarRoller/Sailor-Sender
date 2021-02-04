@@ -29,6 +29,9 @@ from win.selectMode import *
 from docxtpl import DocxTemplate
 import json
 import temp.yagmail.__init__ 
+
+
+
 errorLogin = True
 global infoText
 infoText = "None"
@@ -197,7 +200,7 @@ class Error(QtWidgets.QDialog):
         self.setStyleSheet("background-color: ")   
         global infoText 
         self.label = QtWidgets.QLabel(infoText,self)
-        self.label.setGeometry(QtCore.QRect(self.sizeX//2 - 25 ,self.sizeY//2-40 ,110, 30))
+        self.label.setGeometry(QtCore.QRect(10 ,self.sizeY//2-40 ,400, 30))
         font = QtGui.QFont()
         font.setFamily("Poppins-Regular")
         font.setBold(False)
@@ -221,6 +224,12 @@ class Error(QtWidgets.QDialog):
 "  background-color: #545454;\n"
 "}\n"
 )
+        self.btn.clicked.connect(self.__close)
+
+    def __close(self):
+        self.close()
+        win = MyForm()
+        win.show()
  
 
 class BkTo(QtWidgets.QDialog): #Форма для выхода из программы
@@ -299,6 +308,8 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         fname.exec()
         print('{0}/{1}'.format(fname.filename[0], fname.filename[1]))
         self.form.fileChose_2.setText(str('{0}/{1}'.format(fname.filename[0], fname.filename[1]))) #Отображение пути к файлу
+        self.win = MyForm()
+        self.win.show()
     
     def sendForm(self): #Рассылка сообщений
         print("Отправка сообщений")
@@ -313,6 +324,7 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         procent = 100 / len(BaseObl) #Расчёт прогрес бара
         value = 0 #Начальное значение
         try:
+            print("Вхід до циклу")
             for adress in BaseObl: #Функция отправки сообщений
                 try:
                     ent.send(
@@ -339,8 +351,8 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
         except TypeError: #Исключение, если пропушена апликашка
             global infoText
             infoText = "Укажіть путь до резюме, будь-ласка"
-            win = Error(self)
-            win.show()
+            self.win = Error()
+            self.win.show()
             
 
 
