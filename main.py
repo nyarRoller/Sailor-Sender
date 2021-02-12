@@ -183,13 +183,13 @@ class quest(QtWidgets.QMainWindow):
 
 
 class Error(QtWidgets.QDialog):
-    def __init__(self):
+    def __init__(self,text):
         super().__init__()
 
-        self.initUI()
+        self.initUI(text)
 
 
-    def initUI(self):
+    def initUI(self,text):   
         self.setWindowTitle("Пропущено путь")
         self.setWindowIcon(QIcon('icon.png'))        
         self.setObjectName("MainWindow")
@@ -198,8 +198,8 @@ class Error(QtWidgets.QDialog):
         self.setMinimumSize(QtCore.QSize(self.sizeX, self.sizeY))
         self.setMaximumSize(QtCore.QSize(self.sizeX, self.sizeY))
         self.setStyleSheet("background-color: ")   
-        global infoText 
-        self.label = QtWidgets.QLabel(infoText,self)
+        # global infoText 
+        self.label = QtWidgets.QLabel(text,self)
         self.label.setGeometry(QtCore.QRect(10 ,self.sizeY//2-40 ,400, 30))
         font = QtGui.QFont()
         font.setFamily("Poppins-Regular")
@@ -224,12 +224,9 @@ class Error(QtWidgets.QDialog):
 "  background-color: #545454;\n"
 "}\n"
 )
-        self.btn.clicked.connect(self.__close)
+        self.btn.clicked.connect(self.close)
 
-    def __close(self):
-        self.close()
-        win = MyForm()
-        win.show()
+
  
 
 class BkTo(QtWidgets.QDialog): #Форма для выхода из программы
@@ -350,9 +347,10 @@ class MyForm(QtWidgets.QDialog): #Окно отправки сообщения
             BackForm.exec_()                    
         except TypeError: #Исключение, если пропушена апликашка
             global infoText
-            infoText = "Укажіть путь до резюме, будь-ласка"
-            self.win = Error()
+            text = "Укажіть путь до резюме, будь-ласка"
+            self.win = Error(text)
             self.win.show()
+            
             
 
 

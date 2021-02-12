@@ -1,3 +1,8 @@
-import base64
+class test():
+    def __init__(btn):
+        super().__init__()
+    def lol(btn):
+        btn.k = 123
 
-print(base64.b64decode("eWJyYm5mMTEyMzIz".encode("UTF-8")).decode("UTF-8") )
+    def prnt(btn):
+        print(btn.k)
