@@ -1,14 +1,14 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'GUI.ui'
-#
-# Created by: PyQt5 UI code generator 5.14.2
-#
-# WARNING! All changes made in this file will be lost!
-
-
+#Login window
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json
+import sys
+import os
 
+sys.path.append(os.getcwd())
+from data.language import languages
+with open("data\data.json", "r") as read_file:
+        data = json.load(read_file)
+lang = data["language"]
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(-1, -1, 973, 773))
+        self.frame.setGeometry(QtCore.QRect(0, 0, 973, 773))
         self.frame.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.frame.setStyleSheet("background-image: url(bg-01.jpg);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.label.move(20,55)
         font = QtGui.QFont()
         font.setFamily("Poppins-Regular")
-        font.setPointSize(-1)
+        font.setPointSize(0)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -109,8 +109,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sailor Sender"))
-        self.Enter.setText(_translate("MainWindow", "Вхід"))
-        self.status.setText(_translate("MainWindow", "Очикується вхід"))
-        self.label.setText(_translate("MainWindow", "Статус:"))
-        self.labeEmail.setText(_translate("MainWindow", "Пошта"))
-        self.labelPasword.setText(_translate("MainWindow", "Пароль"))
+        self.Enter.setText(_translate("MainWindow", languages[lang]["mainWindow"]["login"]))
+        self.status.setText(_translate("MainWindow", languages[lang]["mainWindow"]["statusInfo"][0]))
+        self.label.setText(_translate("MainWindow", languages[lang]["mainWindow"]["status"]))
+        self.labeEmail.setText(_translate("MainWindow", languages[lang]["mainWindow"]["email"]))
+        self.labelPasword.setText(_translate("MainWindow", languages[lang]["mainWindow"]["password"]))

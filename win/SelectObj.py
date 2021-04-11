@@ -8,7 +8,15 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json
+import sys
+import os
 
+sys.path.append(os.getcwd())
+from data.language import languages
+with open("data\data.json", "r") as read_file:
+        data = json.load(read_file)
+lang = data["language"]
 
 class Ui_SelectObl(object):
     def setupUi(self, SelectObl):
@@ -1091,33 +1099,33 @@ class Ui_SelectObl(object):
     def retranslateUi(self, SelectObl):
         _translate = QtCore.QCoreApplication.translate
         SelectObl.setWindowTitle(_translate("SelectObl", "Sailor Sender"))
-        self.Vintis.setText(_translate("SelectObl", "Вінницька область"))
-        self.Volinsk.setText(_translate("SelectObl", "Волинська область"))
-        self.Dnipropentrovsk.setText(_translate("SelectObl", "Дніпропетровська область"))
-        self.Donteska.setText(_translate("SelectObl", "Донецька область"))
-        self.Zhitomirska.setText(_translate("SelectObl", "Житомирська область"))
-        self.Zakarpatska.setText(_translate("SelectObl", "Закарпатська область"))
-        self.Zaporizka.setText(_translate("SelectObl", "Запорізька область"))
-        self.Ivanofrankivska.setText(_translate("SelectObl", "Івано-Франківська область"))
-        self.Kievska.setText(_translate("SelectObl", "Київська область"))
-        self.Kirovogradska.setText(_translate("SelectObl", "Кіровоградська область"))
-        self.Luganska.setText(_translate("SelectObl", "Луганська область"))
-        self.Lvivska.setText(_translate("SelectObl", "Львівська область"))
-        self.Mikolaevska.setText(_translate("SelectObl", "Миколаївська область"))
-        self.Sumska.setText(_translate("SelectObl", "Сумська область"))
-        self.Hmelnitska.setText(_translate("SelectObl", "Хмельницька область"))
-        self.Odeska.setText(_translate("SelectObl", "Одеська область"))
-        self.Ternopilska.setText(_translate("SelectObl", "Тернопільська область"))
-        self.Hersonska.setText(_translate("SelectObl", "Херсонська область"))
-        self.Harkivska.setText(_translate("SelectObl", "Харківська область"))
-        self.Chekaska.setText(_translate("SelectObl", "Черкаська область"))
-        self.Chernivetksa.setText(_translate("SelectObl", "Чернівецька область"))
-        self.Rivnenska.setText(_translate("SelectObl", "Рівненська область"))
-        self.Chernikibska.setText(_translate("SelectObl", "Чернігівська область"))
-        self.Poltavska.setText(_translate("SelectObl", "Полтавська область"))
-        self.mKiev.setText(_translate("SelectObl", "Місто Київ"))
-        self.Vinitska.setText(_translate("SelectObl", "Вінницька область"))
-        self.Ukraine.setText(_translate("SelectObl", "Вся Україна"))
-        self.label.setText(_translate("SelectObl", "Оберіть область:"))
+        self.Vintis.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Vin"]))
+        self.Volinsk.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Vol"]))
+        self.Dnipropentrovsk.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Dnipro"]))
+        self.Donteska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Donetsk"]))
+        self.Zhitomirska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Zhitomir"]))
+        self.Zakarpatska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Zakarpat"]))
+        self.Zaporizka.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Zaporiz"]))
+        self.Ivanofrankivska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Ivanofrank"]))
+        self.Kievska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Kiev"]))
+        self.Kirovogradska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Kirovograd"]))
+        self.Luganska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Lugansk"]))
+        self.Lvivska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Lviv"]))
+        self.Mikolaevska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Mikolaev"]))
+        self.Sumska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Sumsk"]))
+        self.Hmelnitska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Hmeln"]))
+        self.Odeska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Odes"]))
+        self.Ternopilska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Ternopil"]))
+        self.Hersonska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Herson"]))
+        self.Harkivska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Harkiv"]))
+        self.Chekaska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Chekas"]))
+        self.Chernivetksa.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Chernivetk"]))
+        self.Rivnenska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Rivnensk"]))
+        self.Chernikibska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Chernik"]))
+        self.Poltavska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Poltav"]))
+        self.mKiev.setText(_translate("SelectObl", languages[lang]["selectRegion"]["mKiev"]))
+        self.Vinitska.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Vin"]))
+        self.Ukraine.setText(_translate("SelectObl", languages[lang]["selectRegion"]["Ukr"]))
+        self.label.setText(_translate("SelectObl", languages[lang]["selectRegion"]["select"]))
      
         

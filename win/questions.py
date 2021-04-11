@@ -8,6 +8,15 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json
+import sys
+import os
+
+sys.path.append(os.getcwd())
+from data.language import languages
+with open("data\data.json", "r") as read_file:
+        data = json.load(read_file)
+lang = data["language"]
 
 
 class Ui_QST(object):
@@ -224,11 +233,11 @@ class Ui_QST(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Sailor Sender"))
-        self.question.setText(_translate("MainWindow", "Питання"))
-        self.Enter.setText(_translate("MainWindow", "Наступне"))
-        self.bk.setText(_translate("MainWindow", "Назад"))
-        self.LogOut.setText(_translate("selectMode", "Вийти"))
+        self.question.setText(_translate("MainWindow", languages[lang]["CVGen"]["quest"]))
+        self.Enter.setText(_translate("MainWindow", languages[lang]["CVGen"]["next"]))
+        self.bk.setText(_translate("MainWindow", languages[lang]["global"]["back"]))
+        self.LogOut.setText(_translate("selectMode", languages[lang]["global"]["LogOut"]))
         self.email.setText(_translate("selectMode", "Електронна пошта"))
-        self.back.setText(_translate("selectMode", "Назад"))
+        self.back.setText(_translate("selectMode", languages[lang]["CVGen"]["back"]))
         
 

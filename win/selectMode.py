@@ -9,6 +9,16 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon, QPixmap
+import json
+import sys
+import os
+
+sys.path.append(os.getcwd())
+from data.language import languages
+with open("data\data.json", "r") as read_file:
+        data = json.load(read_file)
+lang = data["language"]
+
 
 class Ui_selectMode(object):
     def setupUi(self, selectMode):
@@ -226,9 +236,9 @@ class Ui_selectMode(object):
     def retranslateUi(self, selectMode):
         _translate = QtCore.QCoreApplication.translate
         selectMode.setWindowTitle(_translate("selectMode", "Sailor Sender"))
-        self.LogOut.setText(_translate("selectMode", "Вийти"))
+        self.LogOut.setText(_translate("selectMode", languages[lang]["global"]["LogOut"]))
         self.email.setText(_translate("selectMode", "Електронна пошта"))
-        self.back.setText(_translate("selectMode", "Назад"))
-        self.ApGenerator.setText(_translate("selectMode", "Application Generator"))
-        self.ManualMode.setText(_translate("selectMode", "Manual mode"))
-        self.label.setText(_translate("selectMode", "Оберіть режим"))
+        self.back.setText(_translate("selectMode",  languages[lang]["global"]["back"]))
+        self.ApGenerator.setText(_translate("selectMode",  languages[lang]["selectMode"]["apGen"]))
+        self.ManualMode.setText(_translate("selectMode",  languages[lang]["selectMode"]["manMode"]))
+        self.label.setText(_translate("selectMode",  languages[lang]["selectMode"]["select"]))

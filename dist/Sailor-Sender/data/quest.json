@@ -1,7 +1,7 @@
 {
-    "questCount": 33,
+    "questCount": 24,
     "answers": {
-        "Name": "\u043d\u0438\u043a\u0438\u0442\u0430",
+        "Name": "",
         "Surname": "",
         "Date": "",
         "Place": "",
@@ -10,7 +10,7 @@
         "Height": "",
         "Weight": "",
         "ClEy": "",
-        "ClH": "51515",
+        "ClH": "",
         "MobPhone": "",
         "Email": "",
         "CivilStat": "",

@@ -8,7 +8,15 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import json
+import sys
+import os
 
+sys.path.append(os.getcwd())
+from data.language import languages
+with open("data\data.json", "r") as read_file:
+        data = json.load(read_file)
+lang = data["language"]
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -237,11 +245,11 @@ class Ui_Dialog(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Poppins Medium\'; font-size:16pt; font-weight:56; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:400;\"><br /></p></body></html>"))
-        self.sendFile_2.setText(_translate("Dialog", "Обрати файл"))
-        self.sendForm_2.setText(_translate("Dialog", "Відправити"))
-        self.theme_2.setText(_translate("Dialog", "Тема листа"))
-        self.text_2.setText(_translate("Dialog", "Текст листа"))
-        self.fileAp_2.setText(_translate("Dialog", "Резюме моряка"))
-        self.LogOut.setText(_translate("Dialog", "Вийти"))
+        self.sendFile_2.setText(_translate("Dialog", languages[lang]["sending"]["chFile"]))
+        self.sendForm_2.setText(_translate("Dialog", languages[lang]["sending"]["send"]))
+        self.theme_2.setText(_translate("Dialog", languages[lang]["sending"]["theame"]))
+        self.text_2.setText(_translate("Dialog", languages[lang]["sending"]["text"]))
+        self.fileAp_2.setText(_translate("Dialog", languages[lang]["sending"]["cv"]))
+        self.LogOut.setText(_translate("Dialog", languages[lang]["global"]["LogOut"]))
         self.email.setText(_translate("Dialog", "Електронна пошта"))
-        self.back.setText(_translate("Dialog", "Назад"))
+        self.back.setText(_translate("Dialog", languages[lang]["global"]["back"]))
